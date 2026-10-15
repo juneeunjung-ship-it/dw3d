@@ -74,7 +74,7 @@ button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{o
 .panel{overflow-y:auto;border-left:1px solid var(--line);background:var(--panel);padding-inline:26px;padding-block:22px 32px;display:flex;flex-direction:column;gap:24px;min-width:0}
 .panel.locked{opacity:.55;pointer-events:none}
 .eyebrow{margin:0 0 6px;font-size:12.5px;letter-spacing:.07em;color:var(--ink-2)}
-h1{margin:0;font:800 32px/1.15 var(--f-display);letter-spacing:-.01em;text-wrap:balance}
+h1{margin:0;font:800 29px/1.2 var(--f-display);letter-spacing:-.01em;text-wrap:balance}
 .lede{margin:8px 0 0;color:var(--ink-2);font-size:14.5px;max-width:34em}
 h2{margin:0 0 10px;font-size:13.5px;font-weight:600;letter-spacing:.05em;color:var(--ink-2)}
 section{min-width:0}
@@ -83,20 +83,22 @@ section{min-width:0}
 .note{margin:9px 0 0;font-size:14px;color:var(--ink-2);line-height:1.6}
 .note b{color:var(--ink);font-weight:600}
 
-.mgrid{display:grid;grid-template-columns:2.4em repeat(4,minmax(0,1fr));gap:7px 6px;font-variant-numeric:tabular-nums}
-.mgrid .rh{font-size:13.5px;color:var(--ink-2);display:flex;align-items:center}
-.mbtn{appearance:none;border:1px solid var(--line);background:var(--field);border-radius:2px;padding:11px 3px 10px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;cursor:pointer;min-width:0}
-.mbtn b{font:500 15px var(--f-mono)}
-.mbtn small{font-size:12.5px;line-height:1.3;color:var(--ink-2);text-align:center;word-break:keep-all}
+.mgroup+.mgroup{margin-top:16px}
+.grp{margin:0 0 8px;font-size:16.5px;font-weight:700;color:var(--ink)}
+.mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.mbtn{appearance:none;border:1px solid var(--line);background:var(--field);border-radius:3px;padding:12px 12px 10px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;cursor:pointer;min-width:0;text-align:left;min-height:86px}
+.mbtn .t{font-size:16px;font-weight:600;line-height:1.35;word-break:keep-all}
+.mbtn .a{font-size:16px;font-weight:600;line-height:1.35;color:var(--brand);word-break:keep-all}
+.mbtn small{margin-top:auto;padding-top:6px;font:500 12.5px var(--f-mono);color:var(--ink-2);letter-spacing:.02em}
 .mbtn:hover{border-color:var(--brand)}
 .mbtn[aria-pressed="true"]{background:var(--brand);color:var(--brand-fg);border-color:var(--brand);box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--brand)}
-.mbtn[aria-pressed="true"] b{font-weight:600}
-.mbtn[aria-pressed="true"] small{color:inherit;opacity:.9}
+.mbtn[aria-pressed="true"] .a{color:inherit}
+.mbtn[aria-pressed="true"] small{color:inherit;opacity:.85}
 
 .spec{border-top:2px solid var(--ink);padding-top:12px;display:grid;gap:10px}
 .spec-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.spec .code{font:500 30px/1 var(--f-mono);letter-spacing:-.02em}
-.spec .name{font:700 18px var(--f-display)}
+.spec .name{font:800 22px/1.3 var(--f-display)}
+.spec .code{font:500 14px/1 var(--f-mono);color:var(--ink-2);letter-spacing:.02em}
 .spec dl{display:grid;grid-template-columns:3.4em minmax(0,1fr);gap:8px 10px;margin:0;font-size:14.5px}
 .spec dt{color:var(--ink-2)}
 .spec dd{margin:0;min-width:0}
@@ -143,6 +145,9 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .cta-tel{font:500 16.5px var(--f-mono);letter-spacing:.01em}
 .cta-why{margin:0;font-size:14px;line-height:1.6;color:var(--ink);border-left:2px solid var(--line);padding-left:10px}
 .btn.kakao{background:#fee500;border-color:#fee500;color:#191919}
+.btn.sms{background:var(--brand);border-color:var(--brand);color:var(--brand-fg);font-size:16.5px;padding:15px 8px}
+.cta-note b{color:var(--ink);font-weight:600}
+@media (hover:hover) and (pointer:fine){.touch-only{display:none!important}}
 .linkbtn{appearance:none;border:0;background:none;padding:0;font-size:14px;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;justify-self:start}
 
 details.adjust{border-top:1px solid var(--line);padding-top:12px}
@@ -215,10 +220,10 @@ body.public .int-only{display:none!important}
 
   <aside class="panel" id="panel">
     <header>
-      <p class="eyebrow">대진석재 · 1인·합장 평장묘</p>
-      <h1>DW 시리즈</h1>
+      <p class="eyebrow">DW 시리즈</p>
+      <h1>대진석재 1인 · 합장 평장묘 세트</h1>
       <p class="lede int-only">도면 치수 그대로 만든 3D 모형입니다. 각도를 맞춰 이미지와 조립 영상을 저장할 수 있습니다.</p>
-      <p class="lede pub-only">평장비와 구성을 골라 3D로 살펴보세요. 마우스나 손가락으로 돌려 보고, 조립 과정 영상과 전체 구조도 확인할 수 있습니다.</p>
+      <p class="lede pub-only">원하시는 구성을 골라 3D로 살펴보세요. 마우스나 손가락으로 돌려 보고, 조립 과정 영상과 전체 구조도 확인할 수 있습니다.</p>
     </header>
 
     <section class="viewctl d-only" aria-label="보기">
@@ -226,6 +231,28 @@ body.public .int-only{display:none!important}
         <button data-k="mode" data-v="complete">완성 모습</button>
         <button data-k="mode" data-v="assembly">조립 과정 영상</button>
         <button data-k="mode" data-v="chamber">전체 구조</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="hModel">
+      <h2 class="ask" id="hModel">모델을 선택해주세요</h2>
+      <div class="mgroup">
+        <p class="grp">자갈</p>
+        <div class="mgrid" role="group" aria-label="자갈 세트">
+        <button class="mbtn" id="m11" data-model="11" aria-pressed="false"><span class="t">자갈기본세트</span><small>DW-11</small></button>
+        <button class="mbtn" id="m12" data-model="12" aria-pressed="false"><span class="t">자갈기본세트</span><span class="a">+ 상석 650</span><small>DW-12</small></button>
+        <button class="mbtn" id="m13" data-model="13" aria-pressed="false"><span class="t">자갈기본세트</span><span class="a">+ 상석 750</span><small>DW-13</small></button>
+        <button class="mbtn" id="m14" data-model="14" aria-pressed="false"><span class="t">자갈기본세트</span><span class="a">+ 상석 900</span><small>DW-14</small></button>
+        </div>
+      </div>
+      <div class="mgroup">
+        <p class="grp">판석</p>
+        <div class="mgrid" role="group" aria-label="판석 세트">
+        <button class="mbtn" id="m15" data-model="15" aria-pressed="false"><span class="t">판석기본세트</span><small>DW-15</small></button>
+        <button class="mbtn" id="m16" data-model="16" aria-pressed="false"><span class="t">판석기본세트</span><span class="a">+ 상석 750</span><small>DW-16</small></button>
+        <button class="mbtn" id="m17" data-model="17" aria-pressed="false"><span class="t">판석확장세트</span><small>DW-17</small></button>
+        <button class="mbtn" id="m18" data-model="18" aria-pressed="false"><span class="t">판석확장세트</span><span class="a">+ 상석 900</span><small>DW-18</small></button>
+        </div>
       </div>
     </section>
 
@@ -238,42 +265,30 @@ body.public .int-only{display:none!important}
       <p class="note" id="stoneNote"></p>
     </section>
 
-    <section aria-labelledby="hModel">
-      <h2 class="ask" id="hModel">모델을 선택해주세요</h2>
-      <div class="mgrid" role="group" aria-labelledby="hModel">
-        <span class="rh">자갈</span>
-        <button class="mbtn" id="m11" data-model="11" aria-pressed="false"><b>DW-11</b><small>기본</small></button>
-        <button class="mbtn" id="m12" data-model="12" aria-pressed="false"><b>DW-12</b><small>상석 650</small></button>
-        <button class="mbtn" id="m13" data-model="13" aria-pressed="true"><b>DW-13</b><small>상석 750</small></button>
-        <button class="mbtn" id="m14" data-model="14" aria-pressed="false"><b>DW-14</b><small>상석 900</small></button>
-        <span class="rh">판석</span>
-        <button class="mbtn" id="m15" data-model="15" aria-pressed="false"><b>DW-15</b><small>기본</small></button>
-        <button class="mbtn" id="m16" data-model="16" aria-pressed="false"><b>DW-16</b><small>상석 750</small></button>
-        <button class="mbtn" id="m17" data-model="17" aria-pressed="false"><b>DW-17</b><small>확장형</small></button>
-        <button class="mbtn" id="m18" data-model="18" aria-pressed="false"><b>DW-18</b><small>확장형 + 상석 900</small></button>
-      </div>
-    </section>
-
     <section aria-labelledby="hBurial">
       <h2 class="ask" id="hBurial">석실 옵션을 선택해주세요</h2>
       <div class="seg big" role="group" aria-labelledby="hBurial">
-        <button id="bSingle" data-k="burial" data-v="single">1인 · 통칸</button>
-        <button id="bDouble" data-k="burial" data-v="double">합장 · 2칸</button>
+        <button id="bSingle" data-k="burial" data-v="single">1인 · 단장</button>
+        <button id="bDouble" data-k="burial" data-v="double">2인 · 합장</button>
         <button id="bNone" data-k="burial" data-v="none">석실 없음</button>
       </div>
       <p class="note">1인·합장 선택. 겉모양은 같고 석실 칸만 다릅니다. 기존 봉분묘는 봉분만 걷어 내고, 석실 없이 같은 모델을 설치할 수 있습니다.</p>
     </section>
 
-    <section aria-labelledby="hLook">
-      <h2 id="hLook">배경 · 자갈</h2>
-      <div class="seg" role="group" aria-label="배경">
-        <button id="bgSite" data-k="bg" data-v="site">현장</button>
-        <button id="bgStudio" data-k="bg" data-v="studio">흰 배경</button>
-      </div>
-      <div class="seg" role="group" aria-label="자갈 종류" id="gravelSeg">
+    <section id="gravelSec" aria-labelledby="hGravel">
+      <h2 class="ask" id="hGravel">자갈 종류를 선택해주세요</h2>
+      <div class="seg big" role="group" aria-labelledby="hGravel">
         <button id="gGray" data-k="gravel" data-v="gray">쇄석</button>
         <button id="gWhite" data-k="gravel" data-v="white">백자갈</button>
         <button id="gBlack" data-k="gravel" data-v="black">흑자갈</button>
+      </div>
+    </section>
+
+    <section class="int-only" aria-labelledby="hBg">
+      <h2 id="hBg">배경</h2>
+      <div class="seg" role="group" aria-labelledby="hBg">
+        <button id="bgSite" data-k="bg" data-v="site">현장</button>
+        <button id="bgStudio" data-k="bg" data-v="studio">흰 배경</button>
       </div>
     </section>
 
@@ -301,7 +316,7 @@ body.public .int-only{display:none!important}
     </section>
 
     <section class="spec" aria-live="polite">
-      <div class="spec-head"><span class="code" id="specCode">DW-13</span><span class="name" id="specName">자갈형 · 상석 750</span></div>
+      <div class="spec-head"><span class="name" id="specName">자갈기본세트 + 상석 750</span><span class="code" id="specCode">DW-13</span></div>
       <dl>
         <dt>크기</dt><dd class="num" id="specSize">1600 × 1840 mm</dd>
         <dt>전체</dt><dd id="specTotal">1600 × 2460 mm</dd>
@@ -311,8 +326,10 @@ body.public .int-only{display:none!important}
 
     <section class="cta pub-only" aria-labelledby="hCta">
       <h2 id="hCta">이 구성으로 상담하기</h2>
-      <p class="cta-sum" id="ctaSum">DW-13</p>
-      <p class="cta-why">금액은 현장 여건(장비 사용 여부, 작업 인원)과 설치 기수에 따라 달라지고, 상담하며 구성을 바꾸시는 분도 많아 상담으로 안내해 드립니다. 고르신 구성을 전화나 카카오톡으로 편하게 보내 주세요.</p>
+      <p class="cta-sum" id="ctaSum">자갈기본세트 + 상석 750</p>
+      <p class="cta-why">현장 여건과 설치 포함 여부를 별도 상담 후 금액을 안내해 드립니다. 고르신 구성을 문자나 카카오톡으로 편하게 보내 주세요.</p>
+      <a class="btn sms touch-only" id="ctaSms" href="sms:01073975889">문자로 구성 보내기</a>
+      <p class="cta-note touch-only">누르시면 고르신 구성이 문자에 자동으로 적힙니다. <b>보내기만 누르시면 됩니다.</b></p>
       <div class="cta-row">
         <a class="btn" id="ctaTel" href="tel:01073975889">전화 상담</a>
         <a class="btn kakao" id="ctaKakao" href="https://pf.kakao.com/_ExoDxmK/chat" target="_blank" rel="noopener">카카오톡 상담</a>
@@ -390,14 +407,14 @@ const MONO='"IBM Plex Mono",Menlo,monospace';
 
 /* ───────── 모델 정의 (도면 기준) ───────── */
 const MODELS={
-  '11':{finish:'gravel',D:1840,extra:'none',short:'기본'},
-  '12':{finish:'gravel',D:1840,extra:'table-in',short:'상석 650'},
-  '13':{finish:'gravel',D:1840,extra:'table-s',short:'상석 750'},
-  '14':{finish:'gravel',D:1840,extra:'table-l',short:'상석 900'},
-  '15':{finish:'tile',D:1620,extra:'none',short:'기본'},
-  '16':{finish:'tile',D:1620,extra:'table-s',short:'상석 750'},
-  '17':{finish:'tile',D:2125,extra:'vase-in',short:'확장형'},
-  '18':{finish:'tile',D:2125,extra:'table-l',short:'확장형 + 상석 900'},
+  '11':{finish:'gravel',D:1840,extra:'none',title:'자갈기본세트',add:''},
+  '12':{finish:'gravel',D:1840,extra:'table-in',title:'자갈기본세트',add:'+ 상석 650'},
+  '13':{finish:'gravel',D:1840,extra:'table-s',title:'자갈기본세트',add:'+ 상석 750'},
+  '14':{finish:'gravel',D:1840,extra:'table-l',title:'자갈기본세트',add:'+ 상석 900'},
+  '15':{finish:'tile',D:1620,extra:'none',title:'판석기본세트',add:''},
+  '16':{finish:'tile',D:1620,extra:'table-s',title:'판석기본세트',add:'+ 상석 750'},
+  '17':{finish:'tile',D:2125,extra:'vase-in',title:'판석확장세트',add:''},
+  '18':{finish:'tile',D:2125,extra:'table-l',title:'판석확장세트',add:'+ 상석 900'},
 };
 const TABLES={'table-s':{w:0.75,d:0.45,h:0.15},'table-l':{w:0.9,d:0.6,h:0.21},'table-in':{w:0.65,d:0.48,h:0.06}};
 const INC={w:0.40,d:0.17,h:0.16};
@@ -737,7 +754,7 @@ function buildGravel(o){
 let model=null;
 function makeSteps(spec){
   const tile=spec.finish==='tile',hasCh=state.burial!=='none',s=[];
-  if(hasCh)s.push({key:'chamber',label:state.burial==='double'?'석실 설치 · 합장 2칸':'석실 설치 · 1인 통칸',dur:1.5});
+  if(hasCh)s.push({key:'chamber',label:state.burial==='double'?'석실 설치 · 2인 합장':'석실 설치 · 1인 단장',dur:1.5});
   if(hasCh&&!tile)s.push({key:'lid',label:'석실 덮개',dur:0.9});
   s.push({key:'border',label:'둘레석 설치',dur:1.8});
   s.push({key:'anchor',label:'모서리 앙카 고정',dur:1.3});
@@ -1122,7 +1139,7 @@ function getLabels(){
     out.push([L.wedge.clone().setY(L.wedge.y+lift),'평장비']);
     out.push([L.base.clone().setY(L.base.y+lift),'받침석']);
     if(L.lid)out.push([L.lid.clone().setY(L.lid.y+0.28),'석실 덮개']);
-    if(model.hasCh)out.push([L.chamberIn,model.dbl?'석실 · 합장 2칸':'석실 · 1인 통칸',true]);
+    if(model.hasCh)out.push([L.chamberIn,model.dbl?'석실 · 2인 합장':'석실 · 1인 단장',true]);
     else out.push([L.center,'석실 없음 · 봉분 정리 후 설치',true]);
     out.push([L.anchor,'모서리 앙카']);
     out.push([L.border,'둘레석']);
@@ -1140,7 +1157,7 @@ function getLabels(){
   }
   return out;
 }
-function modelName(){const s=MODELS[state.model];return `${s.finish==='tile'?'판석형':'자갈형'} · ${s.short}`}
+function modelName(){const s=MODELS[state.model];return s.add?`${s.title} ${s.add}`:s.title}
 function drawOverlay(ctx,w,h,kind,live=false){
   if(!model)return;
   const clearBottom=live&&!rec&&state.mode==='assembly';
@@ -1167,9 +1184,8 @@ function drawOverlay(ctx,w,h,kind,live=false){
     ctx.textBaseline='alphabetic';ctx.textAlign='left';
     ctx.shadowColor=site?'rgba(0,0,0,0.5)':'transparent';ctx.shadowBlur=site?7*k:0;
     ctx.fillStyle=site?'#ffffff':'#1c1f21';
-    ctx.font=`600 ${11*k}px ${SANS}`;ctx.fillText(`대진석재 · ${STONE_NAME[state.stone]}`,pad,h-pad-26*k);
-    ctx.font=`800 ${21*k}px ${SERIF}`;const code=`DW-${state.model}`;ctx.fillText(code,pad,h-pad);
-    const cw=ctx.measureText(code).width;ctx.font=`500 ${13*k}px ${SANS}`;ctx.fillText(modelName(),pad+cw+10*k,h-pad-1*k);
+    ctx.font=`600 ${11*k}px ${SANS}`;ctx.fillText(`대진석재 · DW-${state.model} · ${STONE_NAME[state.stone]}`,pad,h-pad-28*k);
+    ctx.font=`800 ${20*k}px ${SERIF}`;ctx.fillText(modelName(),pad,h-pad);
     ctx.shadowBlur=0;
   }
   if(state.showMark&&!state.public&&!clearBottom){
@@ -1202,8 +1218,8 @@ new ResizeObserver(()=>layoutStage()).observe(wrapEl);
 /* ───────── 저장 ───────── */
 function fileBase(){
   const s=MODELS[state.model];
-  const bur={single:'1인',double:'합장',none:'석실없음'}[state.burial];
-  return `DW-${state.model}_${s.finish==='tile'?'판석형':'자갈형'}_${s.short.replace(/[\s+]/g,'')}_${state.stone==='split'?'오석분리형':'오석'}_${bur}_${FORMATS[state.format].tag}`;
+  const bur={single:'1인단장',double:'2인합장',none:'석실없음'}[state.burial];
+  return `DW-${state.model}_${modelName().replace(/\s/g,'')}_${state.stone==='split'?'오석분리형':'오석'}_${bur}_${FORMATS[state.format].tag}`;
 }
 function status(msg){$('#status').textContent=msg}
 async function getDownloads(){
@@ -1313,11 +1329,19 @@ function finishRec(){
 /* ───────── 고객용 화면 ───────── */
 const rootTheme=document.documentElement.getAttribute('data-theme');
 function summaryText(){
-  const bur={single:'1인 통칸',double:'합장 2칸',none:'석실 없음 (봉분 정리)'}[state.burial];
+  const bur={single:'1인 단장',double:'2인 합장',none:'석실 없음 (봉분 정리)'}[state.burial];
   const s=MODELS[state.model];
-  const parts=[`DW-${state.model}`,modelName(),STONE_NAME[state.stone],bur];
+  const parts=[`${modelName()} (DW-${state.model})`,STONE_NAME[state.stone],bur];
   if(s.finish==='gravel')parts.push(GRAVEL_NAME[state.gravel]);
   return parts.join(' · ');
+}
+/* 문자 앱에 미리 채워 둘 내용 */
+function smsBody(){
+  const s=MODELS[state.model];
+  const lines=['[대진석재 상담 문의]',`${modelName()} (DW-${state.model})`,`평장비: ${state.stone==='split'?'오석 분리형':'오석 평장비'}`,`석실: ${{single:'1인 단장',double:'2인 합장',none:'석실 없음 (봉분 정리)'}[state.burial]}`];
+  if(s.finish==='gravel')lines.push(`자갈: ${GRAVEL_NAME[state.gravel]}`);
+  lines.push('설치 지역: ');
+  return lines.join('\n');
 }
 function applyPublic(){
   document.body.classList.toggle('public',state.public);
@@ -1341,13 +1365,14 @@ $('#ctaKakao').addEventListener('click',()=>{copySummary(true)});
 function syncUI(){
   document.querySelectorAll('[data-model]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.model===state.model)));
   document.querySelectorAll('[data-k]').forEach(b=>b.setAttribute('aria-pressed',String(state[b.dataset.k]===b.dataset.v)));
-  $('#gravelSeg').hidden=MODELS[state.model].finish!=='gravel';
+  $('#gravelSec').hidden=MODELS[state.model].finish!=='gravel';
   $('#fmtNote').textContent=FORMATS[state.format].note;
   $('#player').hidden=state.mode!=='assembly';
   $('#stoneNote').innerHTML=STONE_NOTE[state.stone];
   for(const el of document.querySelectorAll('[data-dim]'))if(document.activeElement!==el)el.value=state.dims[el.dataset.dim];
   $('#dVase').disabled=MODELS[state.model].extra==='none';
   $('#ctaSum').textContent=summaryText();
+  $('#ctaSms').href='sms:01073975889?&body='+encodeURIComponent(smsBody());
   updateSpec();
 }
 function updateSpec(){
@@ -1362,10 +1387,10 @@ function updateSpec(){
   items.push(`둘레석 1600×${s.D} · 폭 120, 높이 200 · ${tile?'상단면 연마':'무광'}`);
   items.push(tile?'연마 판석 마감':`자갈 마감 · 쇄석 / 백자갈 / 흑자갈 중 택1`);
   if(state.burial==='none')items.push('석실 없음 · 기존 봉분 정리 후 설치');
-  else items.push(`석실 530×350×240 · ${state.burial==='double'?'합장 2칸':'1인 통칸'}${tile?'':' · 덮개'}`);
+  else items.push(`석실 530×350×240 · ${state.burial==='double'?'2인 합장':'1인 단장'}${tile?'':' · 덮개'}`);
   items.push('앙카 고정 · 둘레석 모서리 4곳');
   if(s.extra==='table-in')items.push('상석 650×480×60 · 연마','화병 1쌍');
-  if(i.tbl)items.push(`상석 ${mm(i.tbl.w)}×${mm(i.tbl.d)}×${mm(i.tbl.h)} · 연마`,`하박석 ${mm(i.tbl.w)}×${mm(i.tbl.d)}×50 · 무광`,'화병 1쌍','향로석 400×170×160');
+  if(i.tbl)items.push(`상석 ${mm(i.tbl.w)}×${mm(i.tbl.d)}×${mm(i.tbl.h)} · 연마`,`하박석 ${mm(i.tbl.w)}×${mm(i.tbl.d)}×40 · 무광`,'화병 1쌍','향로석 400×170×160');
   if(s.extra==='vase-in')items.push('화병 1쌍 · 앞쪽 모서리');
   const ul=$('#specParts');ul.textContent='';
   for(const t of items){const li=document.createElement('li');li.textContent=t;ul.appendChild(li)}
